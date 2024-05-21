@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles-general.css">
+    <link rel="stylesheet" href="./styles/styles-spinner.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.svg">
+
+    <script src="./js/script.js" type="module" defer></script>
+
+    <title>ABM de Cryptos</title>
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./assets/images/logo.svg" alt="Logo de Cryptos">
+                <span class="logo-text">Cryptos</span>
+            </div>
+            <nav>
+                <ul class="flex">
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Anuncio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1>Administrador de Monedas</h1>
+    </header>
+    <main>
+        <div class="container-sections">
+            <section>
+                <form action="" method="post" id="form-item">
+                    <h2>Información de la Moneda</h2>
+                    <input type="number" name="id" id="id" hidden>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" required name="nombre" id="nombre" placeholder="Ingrese Nombre..">
+                    </div>
+                    <div class="form-group">
+                        <label for="simbolo">Simbolo</label>
+                        <input type="text" required name="simbolo" id="simbolo" placeholder="Ingrese Simbolo..">
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio Actual (USD)</label>
+                        <input type="number" required name="precio" id="precio" placeholder="Ingrese Precio..">
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo-de-concenso">Tipo de Consenso</label>
+                        <select name="tipo-de-concenso" id="tipo-de-concenso">
+                            <option value="Proof-of-Work’ ">Proof of Work</option>
+                            <option value="Proof-of-Stake">Proof of Stake</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad-de-circulacion">Cantidad de Circulación</label>
+                        <input type="number" name="cantidad-de-circulacion" id="cantidad-de-circulacion"
+                            placeholder="Ingrese Cantidad..">
+                    </div>
+                    <div class="form-group">
+                        <label for="algoritmo">Algoritmo</label>
+                        <select name="algoritmo" id="algoritmo">
+                            <option value="SHA-256">SHA-256</option>
+                            <option value="Ethash">Ethash</option>
+                            <option value="Scrypt">Scrypt</option>
+                            <option value="X11">X11</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sitio-web-oficial">Sitio Web Oficial</label>
+                        <input type="text" required name="sitio-web-oficial" id="sitio-web-oficial"
+                            placeholder="Ingrese Sitio..">
+                    </div>
+                    <div class="button-container">
+                        <div class="form-group">
+                            <button type="submit" class="btn">Guardar</button>
+                        </div>
+                        <div id="spinnerLoad" class="spinnerLoad">
+                            <img src="./assets/images/img-load.svg" alt="SpinnerLoad" class="spinner-load">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn" id="btn-cancelar">Cancelar</button>
+                        </div>
+                    </div>
+
+                    <button id="btn-mas-acciones" class="btn">Más acciones</button>
+                    <div id="modal" class="modal" style="display: none;">
+                        <div class="modal-content">
+                            <input type="number" cass="container-ingreso-id" name="option-ID" id="ID"
+                                placeholder="Ingrese ID" />
+                            <button id="btn-modificar" class="btn">Modificar</button>
+                            <button id="btn-borrar" class="btn">Borrar</button>
+                            <button id="btn-delete-all" class="btn">Borrar todo</button>
+                            <button id="btn-ocultar" class="btn">Ocultar</button>
+                        </div>
+                    </div>
+
+                </form>
+
+
+                <div class="container-table flex">
+                    <table id="table-items" class="table-items table-stripped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Simbolo</th>
+                                <th>Fecha Creacion</th>
+                                <th>Precio Actual</th>
+                                <th>Consenso</th>
+                                <th>Cantidad Circulacion</th>
+                                <th>Algoritmo</th>
+                                <th>Sitio Web</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbodyx"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="spinner" class="spinner">
+        <img src="./assets/images/logo.svg" alt="Spinner" class="spinner-img">
+    </div>
+
+    <footer class="footer flex">
+        <nav>
+            <ul class="flex">
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Anuncio</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <p>Todos los derechos reservados <date>2021</date> &copy;</p>
+    </footer>
+</body>
+
+</html>

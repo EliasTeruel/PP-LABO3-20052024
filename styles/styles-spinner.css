@@ -1,0 +1,43 @@
+.spinner {
+    display: none;
+    justify-content: center;
+    align-items: center;
+  
+    position: fixed;
+    background: #7a73738f;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.spinner-img {
+    width: 100px;
+    height: 100px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinnerLoad {
+    display: none;
+    margin-left: 10px;
+}
+
+.spinner-load {
+    width: 25px;
+    height: 25px;
+    animation: spinLoad 1s linear infinite;
+}
+
+@keyframes spinLoad {
+    to {
+        transform: rotate(360deg);
+    }
+}
